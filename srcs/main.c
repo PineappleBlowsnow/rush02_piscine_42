@@ -3,12 +3,12 @@
 #include<stdio.h>
 #include "ft.h"
 
-int main() 
+int main(int argc, char** argv) 
 { 
 
-    FILE *fp; 
+    FILE *fp;
+    char ch numbers.dict.txt[1024]; 
     fp = fopen("numbers.dict.txt", "r");
-
 
     fclose(fp);
 
