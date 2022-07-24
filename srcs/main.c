@@ -1,16 +1,20 @@
-#include <fcntl.h> 
-#include<ft.h>
-#include<stdio.h>
 #include "ft.h"
 
 int main(int argc, char** argv) 
 { 
+    (void) argc;
+    (void) argv;
 
-    FILE *fp;
-    char ch numbers.dict.txt[1024]; 
-    fp = fopen("numbers.dict.txt", "r");
+    int fd;
 
-    fclose(fp);
+    char buf[BUFSIZE];
+    fd=open("numbers.dict.txt",O_RDONLY);
+    if(fd<=0){
+        return (-1);
+    } 
+    read(fd,buf,BUFSIZE);
+
+    close(fd);
 
 struct number
 {
