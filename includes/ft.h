@@ -17,11 +17,23 @@ struct nlist
     char *defn;         /* replacement text */
 };
 
+typedef
 struct datalist
 {
     struct datalist *next;
-    char [BUFFSIZE+1] data;
-}
+    struct datalist *pre;
+    char  data[BUFFSIZE+1];
+} t_dl;
+
+ struct number
+    {
+        char *key;
+        char *value;
+        struct number *next;
+    };
+
+
+
 
 
 
