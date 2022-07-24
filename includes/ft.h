@@ -10,17 +10,17 @@
 #include <fcntl.h>
 #define BUFSIZE (1024)
 
-struct nlist
+struct s_nlist
 {                       /* table entry: */
-    struct nlist *next; /* next entry in chain */
+    struct s_nlist *next; /* next entry in chain */
     char *name;         /* defined name */
     char *defn;         /* replacement text */
 };
 
-typedef struct datalist
+typedef struct s_datalist
 {
-    struct datalist *next;
-    struct datalist *pre;
+    struct s_datalist *next;
+    struct s_datalist *pre;
     char data[BUFFSIZE + 1];
 }* t_dl;
 
@@ -31,7 +31,7 @@ struct number
     struct number *next;
 };
 
-char *ft_read_data(int fd); // using datalist to store read data and finally add to a str malloced
+char *ft_read_data(int fd); // using s_datalist to store read data and finally add to a str malloced
 char *ft_strcat(char *dest, char *src);
 void ft_putchar(char c);
 void ft_swap(int *a, int *b);
