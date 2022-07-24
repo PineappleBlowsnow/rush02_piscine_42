@@ -1,4 +1,4 @@
-SRCS		= ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c main.c ft_errorhandle.c ft_displayfile.c ft_dictionary.c
+SRCS		= ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c main.c  ft_dictionary.c
 CFLAGS		= -Wall -Wextra -Werror
 CC			= gcc
 INC			= -I./includes

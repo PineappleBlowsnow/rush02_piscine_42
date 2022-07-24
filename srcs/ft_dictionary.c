@@ -22,7 +22,7 @@ struct nlist *lookup(char *s)
     return NULL;       /* not found */
 }
 
-char *strdup(char *);
+char *ft_strdup(char *);
 /* install: put (name, defn) in hashtab */
 struct nlist *install(char *name, char *defn)
 {
@@ -31,7 +31,7 @@ struct nlist *install(char *name, char *defn)
     if ((np = lookup(name)) == NULL)
     { /* not found */
         np = (struct nlist *)malloc(sizeof(*np));
-        if (np == NULL || (np->name = strdup(name)) == NULL)
+        if (np == NULL || (np->name = ft_strdup(name)) == NULL)
             return NULL;
         hashval = hash(name);
         np->next = hashtab[hashval];
@@ -39,12 +39,12 @@ struct nlist *install(char *name, char *defn)
     }
     else                        /* already there */
         free((void *)np->defn); /*free previous defn */
-    if ((np->defn = strdup(defn)) == NULL)
+    if ((np->defn = ft_strdup(defn)) == NULL)
         return NULL;
     return np;
 }
 
-char *strdup(char *s) /* make a duplicate of s */
+char *ft_strdup(char *s) /* make a duplicate of s */
 {
     char *p;
     p = (char *)malloc(strlen(s) + 1); /* +1 for ’\0’ */
