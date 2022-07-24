@@ -6,7 +6,7 @@ SRC_DIRS 	= ./srcs
 BUILD_DIR   = ./builds
 RM= rm -rf
 OBJS =${SRCS:.c=.o}
-NAME = ft_cat
+NAME = rush-02
 
 ${BUILD_DIR}/%.o:${SRC_DIRS}/%.c
 	mkdir -p ${BUILD_DIR}
