@@ -13,7 +13,7 @@
 #include <ft.h>
 
 #define HASHSIZE 101
-static struct nlist *hashtab[HASHSIZE]; 
+static struct s_nlist *hashtab[HASHSIZE]; 
 
 unsigned	hash(char *s)
 {
@@ -28,9 +28,9 @@ unsigned	hash(char *s)
 	return hashval % HASHSIZE;
 }
 
-struct nlist *lookup(char *s)
+struct s_nlist *lookup(char *s)
 {
-	struct nlist *np;
+	struct s_nlist *np;
 
 	np = hashtab[hash(s)];
 	while(np != NULL)
@@ -43,13 +43,13 @@ struct nlist *lookup(char *s)
 }
 
 char *ft_strdup(char *);
-struct nlist *install(char *name, char *defn)
+struct s_nlist *install(char *name, char *defn)
 {
-	struct nlist *np;
+	struct s_nlist *np;
 	unsigned hashval;
 	if ((np = lookup(name)) == NULL)
 	{ 
-		np = (struct nlist *)malloc(sizeof(*np));
+		np = (struct s_nlist *)malloc(sizeof(*np));
 		if (np == NULL || (np->name = ft_strdup(name)) == NULL)
 			return NULL;
 		hashval = hash(name);
