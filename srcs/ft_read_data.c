@@ -7,7 +7,7 @@ char *readdata(int fd)
     t_dl pre=dl;
     int read_size;
     read_size = read(fd, curr->data, BUFSIZE);
-    curr->data[BUFSIZE] = '\0';
+    curr->data[read_size] = '\0';
     curr->pre=0;
     int totalsize;
 
@@ -17,7 +17,7 @@ char *readdata(int fd)
     {
         curr=malloc(sizeof(*curr));
         read_size = read(fd, curr->data, BUFSIZE);
-        curr->data[BUFSIZE] = '\0';
+        curr->data[read_size] = '\0';
         curr->pre=pre;
         pre->next=curr;
         pre=curr;
